@@ -44,7 +44,7 @@ const App = () => {
       {players.map(player =>
         <Player
           name={player.name}
-          score={props.score}
+          score={player.score}
           id={player.id}
           key={player.id.toString()}
           removePlayer={handleRemovePlayer}
