@@ -33,6 +33,11 @@ const App = () => {
     setPlayers(prevPlayers => prevPlayers.filter(p => p.id !== id));
   }
 
+  const handleScoreChange = (alpha) => {
+   // setScore(Score + 1);
+   console.log(alpha);
+  }
+
   return (
     <div className="scoreboard">
       <Header
@@ -48,6 +53,7 @@ const App = () => {
           id={player.id}
           key={player.id.toString()}
           removePlayer={handleRemovePlayer}
+          changeScore={handleScoreChange}
         />
       )}
     </div>
