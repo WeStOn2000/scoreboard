@@ -33,10 +33,18 @@ const App = () => {
     setPlayers(prevPlayers => prevPlayers.filter(p => p.id !== id));
   }
 
-  const handleScoreChange = (alpha) => {
-   // setScore(Score + 1);
-   console.log(alpha);
-  }
+  const handleScoreChange = (id, alpha) => {
+   setPlayers(prevPlayers => prevPlayers.map(player => {
+    if(player.id === id){
+    return{
+      name : player.name,
+      score: player.score + alpha,
+      id: player.id
+    }
+    }
+    return player;
+   }));
+}
 
   return (
     <div className="scoreboard">
