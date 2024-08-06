@@ -50,7 +50,7 @@ const App = () => {
     <div className="scoreboard">
       <Header
         title="Scoreboard"
-        Players={players}
+        players={players}
       />
 
       {/* Players list */}
