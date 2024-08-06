@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./header";
 import Player from "./Player";
-
+import addPlayerForm from "./addPlayerForm";
 
 
 
@@ -64,6 +64,7 @@ const App = () => {
           changeScore={handleScoreChange}
         />
       )}
+      <addPlayerForm />
     </div>
   );
 
