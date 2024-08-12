@@ -16,4 +16,9 @@ const Header = ({ players, title}) => {
     title: PropTypes.string,
     players: PropTypes.arrayOf(PropTypes.object)
   }
+
+Header.defaultProps={
+    title:"Scoreboard"
+}
+
 export default Header; 
