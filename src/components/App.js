@@ -1,7 +1,8 @@
-import React,{useState} from "react";
+import React,{useState,useRef} from "react";
 import Header from "./header";
 import Player from "./Player";
 import AddPlayerForm from "./addPlayerForm";
+
 
 
 
@@ -29,7 +30,7 @@ const App = () => {
     }
   ]);
   
-  const [nextPlayerId, setNextPlayerId] = useState(5);
+  const nextPlayerId = useRef(5);
 
 
   const handleRemovePlayer = (id) => {
@@ -54,10 +55,9 @@ const handleAddPlayer = (name) =>{
     {
      name,
      score:0,
-     id:nextPlayerId
+     id:nextPlayerId.current++
     }
   ]);
-  setNextPlayerId(prevId => prevId + 1);
 }
   return (
     <div className="scoreboard">
