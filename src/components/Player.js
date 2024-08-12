@@ -1,20 +1,25 @@
-import React from "react";
+import React,{memo} from "react";
 import Counter from "./Counter";
 
-const Player = (props) => {
+const Player = ({removePlayer, id, name, score, changeScore}) => {
     return (
       <div className="player">
         <span className="player-name">
-          <button className="remove-player" onClick={() => props.removePlayer(props.id)}>✖</button>
-          {props.name}
+          <button className="remove-player" onClick={() => removePlayer(id)}>✖</button>
+          {name}
         </span>
   
         <Counter 
-        score={props.score}
-        id={props.id}
-        changeScore={props.changeScore}
+        score={score}
+        id={id}
+        changeScore={changeScore}
         />
       </div>
     );
   }
-export default Player;
+
+  const playerPropsAreEqual =(prevProps, nextProps) => {
+    return prevProps.score === nextProps.score;
+  }
+
+export default memo(Player, playerPropsAreEqual);
